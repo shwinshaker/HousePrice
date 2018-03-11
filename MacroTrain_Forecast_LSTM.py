@@ -602,9 +602,9 @@ if __name__ == '__main__':
 
     # Model
     Model = Sequential()
-    Model.add(LSTM(17, return_sequences=True, input_shape=(nLag+1, len(featureNames))))
+    Model.add(LSTM(23, return_sequences=True, input_shape=(nLag+1, len(featureNames))))
     # model.add(LSTM(22, input_shape=(nLag+1, len(list(data)))))
-    Model.add(LSTM(23))
+    Model.add(LSTM(47))
     Model.add(Dropout(0.1))
     # model.add(LSTM(16))
     # model.add(Dense(64, activation='sigmoid'))
