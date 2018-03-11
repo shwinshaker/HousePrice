@@ -1,4 +1,4 @@
-#!./env python
+﻿#!./env python
 #-*-coding:utf-8 -*-
 
 
@@ -524,8 +524,8 @@ def plot_predict_expect(data, test_on=True, set0=False):
         if i < len_sub-1:
             ax.set_xticks([])
         ax.legend((expected, predicted), ('Expected', 'Predicted'))
-    # plt.savefig('Macro-Train-DF.png', dpi=300)
-    plt.show()
+    plt.savefig('Macro-Train-DF.png', dpi=300)
+    # plt.show()
 
 
 def plot_moving_corr(data_orig, window=10, test_on=True):
@@ -579,8 +579,8 @@ def plot_history(history):
     plt.plot(history.history['loss'], label='train')
     plt.plot(history.history['val_loss'], label='test')
     plt.legend()
-    # plt.savefig('Macro-Train-Loss.png', dpi=300)
-    plt.show()
+    plt.savefig('Macro-Train-Loss.png', dpi=300)
+    # plt.show()
 
 if __name__ == '__main__':
 
@@ -623,9 +623,10 @@ if __name__ == '__main__':
     data_fit, fit_history, trainPack, Model = forecast(dataOrig, labelList, fitParam)
     print '\n  time: %.2f secs' % (time.time() - t0)
 
-    # plot_history(fit_history)
-    # plot_predict_expect(data_fit)
+    plot_history(fit_history)
+    plot_predict_expect(data_fit)
     plot_moving_corr(data_fit)
+
     # xTrain, yTrain, xTest, yTest = trainPack
     # explain(Model, xTrain, xTest, feature_names=featureNames, label_name=labelList,
     #         categorical_feature_names=['PurchaseRestriction'],
